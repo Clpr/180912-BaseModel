@@ -1,0 +1,279 @@
+\hypertarget{model}{%
+\subsection{Model}\label{model}}
+
+\hypertarget{demography}{%
+\subsubsection{Demography}\label{demography}}
+
+In each year, there are \(S = 80\) generations alive. Each agent enters
+the system at 20 years old (\(s = 1\)), works for \(S_{r} = 40\) years
+then retire at end of the year. The population in year \(t\) can be
+denoted as:
+
+\[N_{t} = \sum_{s = 1}^{S}N_{s,t}\]
+
+Without income groups, the number of people born in year \(t\) is
+non-increasing:
+
+\[N_{s + 1,t + s} = N_{s,t + s - 1}\left( 1 - F_{s,t + s - 1} \right)\]
+
+where \(F_{s,t + s - 1} \in \left\lbrack 0,1 \right)\) is mortal
+probabilities. The data are profiled by population forecast.
+
+In each working year, agents have 1 time endowment and make their
+leisure decision \(l_{s,t} \in \left\lbrack 0,1 \right\rbrack\). The
+total labor supply in year \(t\) is:
+
+\[L_{t} = \sum_{s = 1}^{S_{r}}{N_{s,t}\left( 1 - l_{s,t} \right)}\]
+
+\hypertarget{firm}{%
+\subsubsection{Firm}\label{firm}}
+
+We use a Cobb-Douglas production function:
+
+\[Y_{t} = A_{t}{K_{t}}^{\beta}{L_{t}}^{1 - \beta}\]
+
+When equilibrium reached, the firm makes its optimal decision:
+
+\[r_{t} = \frac{\partial Y_{t}}{\partial K_{t}} - \kappa\]
+
+\[{\overline{w}}_{t} = \frac{\partial Y_{t}}{\partial L_{t}}\]
+
+where \(\kappa\) is depreciation rate.
+
+Wage level varies by age. A relative relationship
+\(\varepsilon\left( s \right)\) and a scaling parameter \(o_{t}\) are
+used to profile wages for the working people in each year.
+\(\varepsilon\left( s \right)\) is profiled by survey data.
+
+\[w_{s,t} = {\overline{w}}_{t}o_{t}\varepsilon\left( s \right)\]
+
+\[{\overline{w}}_{t}L_{t} = \sum_{s = 1}^{S_{r}}{w_{s,t}N_{s,t}\left( 1 - l_{s,t} \right)}\]
+
+\hypertarget{social-security}{%
+\subsubsection{Social Security}\label{social-security}}
+
+There are two social security plans: a pay-as-you-go pension and a mixed
+social medical security system.
+
+\hypertarget{pension}{%
+\paragraph{Pension}\label{pension}}
+
+It is convenient to have a simplified, total pay-as-you-go pension in
+our discussion about medical system. In China, agents and firms
+contribute to the pension together. In each year of working, the firm
+pre-contributes \(z_{t}\eta_{t}\) from agent's wage to the pension and
+contributes \(\zeta_{t}\) to the medical system, where \(z_{t}\) is
+collection rate of pension:
+
+\[w_{s,t} = \left( 1 + z_{t}\eta_{t} + \zeta_{t} \right){\widetilde{w}}_{s,t}\]
+
+When agents receive their real wage level \({\widetilde{w}}_{s,t}\),
+they contribute extra \(z_{t}\theta_{t}\) to the pension. The
+\(\theta_{t}\) works on \({\widetilde{w}}_{s,t}\). We use
+\(\pi_{t} = \frac{z_{t}\left( \theta_{t} + \eta_{t} \right)}{1 + z_{t}\eta_{t} + \zeta_{t}}\)
+as the total contribution rate to pension, then the pay-as-you-go
+pension system can be denoted as:
+
+\[\sum_{s = 1}^{S_{r}}{\pi_{t}w_{s,t}N_{s,t}\left( 1 - l_{s,t} \right)} = \sum_{s = S_{r} + 1}^{S}{\Lambda_{s,t}N_{s,t}}\]
+
+where \(\Lambda_{s,t} = \Lambda_{t}\) is the pension benefit in year
+\(t\). We make it distribute even on ages.
+
+\hypertarget{medical-system}{%
+\paragraph{Medical System}\label{medical-system}}
+
+\textbf{The social medical security system consists of individual
+accounts for each generation and one pooling account}. Each agent opens
+his/her own individual account when born and closes the account at
+death. The individual accounts are accumulative. There is also a
+pay-as-you-go pooling account whose gap is covered by the government
+budget in each year.
+
+\textbf{In the medical market, there are two types of medical consumer
+goods}. We assume a well-supplied medical market where agents can
+consume any amount of medical service as they like\footnote{We do not
+  model a medical production department and do not clearly distinguish
+  the medical consumer goods from general consumer goods.}. For a
+specific agent in year \(t\) at age \(s\), he/she decides his/her
+consumption \(c_{s,t}\) in a perfect-forward-looking utility
+optimization (explained in the next section). Meantime, his/her total
+medical consumption \(m_{s,t}\) is also determined by a ratio
+\(q_{t} = \frac{m_{s,t}}{c_{s,t}}\). The \(q_{t}\) ratios are exogeneous
+in steady states but time-variant on the transition path. It varies
+according to a constant income elasticity of medical expenditure:
+\(x = \frac{\partial M_{t}}{M_{t}}\frac{Y_{t}}{\partial Y_{t}} = 1.6\),
+where \(Y_{t}\) is GDP and \(M_{t} = \sum_{s = 1}^{S}{m_{s,t}N_{s,t}}\)
+is the social total medical expenditure in year \(t\). However, we set a
+cap of \(q_{t}\) to avoid a unreasonable level. When \(m_{s,t}\)
+defined, we use another exogenous ratio
+\(p_{s,t} = \frac{\text{MA}_{s,t}}{\text{MB}_{s,t}}\) to distinguish the
+outpatient expenditure \(\text{MA}_{s,t}\) from the inpatient
+expenditure \(\text{MB}_{s,t}\).
+
+\textbf{The two types of accounts separately cover the two types of
+medical expenditures}. Based on the case of China, we have the pooling
+account to cover \(1 - \text{cp}_{t}^{B}\) of agents' inpatient
+expenditures, where \(cp_{t}^{B}\) is the copayment rate. The left
+\(\text{cp}_{t}^{B}\) part is paid by agents' personal asset account
+\(a_{s,t}\). The individual medical accounts, together with agents'
+personal asset accounts, pay for the outpatient expenditures
+\(\text{MA}_{s,t}\). An agent will primarily use the money in his/her
+individual medical account to pay for \(\text{MA}_{s,t}\). If no money
+left there, the agent will use his/her personal asset account to pay the
+bill.
+
+\textbf{Contributions to the two types of medical accounts are designed
+to meet the reality of China}. In working years, the firm contributes
+\(\zeta_{t}\) of \({\widetilde{w}}_{s,t}\) to the medical system. Then
+each agent contributes extra \(\phi_{t}\) of \({\widetilde{w}}_{s,t}\)
+to his/her individual medical account. However, there are
+\(\mathbb{a}_{t}\) of firm's contribution transferred to individual
+medical accounts of those working agents, \(\mathbb{b}_{t}\) of firm's
+contribution transferred to individual medical accounts of those retired
+agents. The left money is then contributed to the pooling medical
+account. We use the following figure to intuitively show the
+relationships in a specific year:
+
+Figure Contributions \& Payments of Medical System
+
+where \(\sigma\) is wage tax rate,
+\(\pi_{t}^{M} = \frac{\phi_{t} + \zeta_{t}}{1 + z_{t}\eta_{t} + \zeta_{t}}\)
+is the total contribution rate to medical system, \(LI_{t}\) is the gap
+of pooling medical account, and \(\Phi_{s,t}\) is the balance of agents'
+individual medical account. If we write the pooling medical account in
+mathematics, we have:
+
+\[\sum_{s = 1}^{S}{\frac{1 - \text{cp}_{t}^{B}}{1 + p_{t}}q_{s,t}c_{s,t}N_{s,t}} = \left( 1 - \mathbb{a}_{t} - \mathbb{b}_{t} \right)\frac{\zeta_{t}}{1 + z_{t}\eta_{t} + \zeta_{t}}\sum_{s = 1}^{S_{r}}{w_{s,t}\left( 1 - l_{s,t} \right)N_{s,t}} + \text{LI}_{t}\]
+
+\textbf{The accumulation of individual medical accounts is similar to
+personal asset accounts}. Agents supply their wealth (both \(a\) and
+\(\Phi\)) to the capital market and get interest incomes. When agents
+die before the life limit, their wealth will be redistributed evenly to
+all agents at the same age. After mathematical simplification, we have:
+
+\[\left\{ \begin{matrix}
+\&\left( 2 - \frac{1}{1 - F_{s}} \right)\Phi_{s + 1} = \left( 1 + r_{s} \right)\Phi_{s} + \frac{\phi_{s} + \mathbb{a}_{s}\zeta_{s}}{1 + z_{s}\eta_{s} + \zeta_{s}}w_{s}\left( 1 - l_{s} \right) - \frac{q_{s}p_{s}}{1 + p_{s}}c_{s},s = 1,\ldots,S_{r} \\
+\&\left( 2 - \frac{1}{1 - F_{s}} \right)\Phi_{s + 1} = \left( 1 + r_{s} \right)\Phi_{s} + \mathbb{P}_{s} - \frac{q_{s}p_{s}}{1 + p_{s}}c_{s},s = S_{r} + 1,\ldots,S \\
+\end{matrix} \right.\ \]
+
+where \(\frac{q_{s}p_{s}}{1 + p_{s}}c_{s} = \text{MA}_{s}\), and
+\(\mathbb{P}_{s,t} = \mathbb{P}_{t}\) is the transfer amount from firm
+contributions to those retired. This amount is determined by:
+
+\[\mathbb{P}_{t}\sum_{s = S_{r} + 1}^{S}N_{s,t} = \sum_{s = 1}^{S_{r}}{\mathbb{b}_{t}\frac{\zeta_{t}}{1 + z_{t}\eta_{t} + \zeta_{t}}w_{s,t}\left( 1 - l_{s,t} \right)N_{s,t}}\]
+
+\hypertarget{household}{%
+\subsubsection{Household}\label{household}}
+
+\textbf{Agents solve a perfect forward-looking utility optimization when
+born}. The cross-section utility function is:
+
+\[u\left( c,l \middle| q,\alpha,\gamma,\varrho \right) = \frac{1}{1 - \gamma^{- 1}}\left\lbrack \left( \left( 1 - q \right)c \right)^{1 - \varrho^{- 1}} + \alpha l^{1 - \varrho^{- 1}} \right\rbrack^{\frac{1 - \gamma^{- 1}}{1 - \varrho^{- 1}}}\]
+
+where \(\alpha\) is the leisure preference than consumption, \(\gamma\)
+is the inter-temporal substitution elasticity, and \(\varrho\) is the
+consumption substitution elasticity of labour. Here we assume that only
+non-medical consumptions bring utility to agents. The problem can be
+written as a Bellman equation:
+
+\[\nu_{s} = \max\left\lbrack u\left( c_{s},l_{s} \right) + \beta_{s}^{u}\nu_{s + 1} \right\rbrack\]
+
+where \(\beta_{s}^{u} = \frac{1 - F_{s}}{1 - \delta}\) is discount
+factor, and \(\delta\) is the utility discount rate.
+
+\textbf{The payment of outpatient expenditures can be seen as a transfer
+from individual medical account to personal asset account}. Agents
+primarily use the money in their individual medical account \(\Phi\) to
+cover the outpatient expenditures. Only if there is no money in the
+account, agents will use the money in their personal account \(a\) to
+pay the bill. However, for the purpose of generality, the process can be
+described as: first, agents always transfer
+\(MA = \frac{p}{\left( 1 + p \right)}\text{qc}\) from \(\Phi\) to \(a\),
+then use \(a\) account to pay the outpatient bill. At last, if
+\(\Phi < 0\), agents transfer money from \(a\) back to \(\Phi\) to make
+sure \(\Phi = 0\). Considering bequests of accident death, we have
+budget constraints:
+
+\[\left\{ \begin{matrix}
+\&\left( 2 - \frac{1}{1 - F_{s}} \right)a_{s + 1} = \left( 1 + r_{s} \right)a_{s} + \left( 1 - \sigma - \pi_{s} - \pi_{s}^{M} \right)w_{s}\left( 1 - l_{s} \right) - c_{s} + \frac{1}{1 + p_{s}}\left\lbrack p_{s} + \left( 1 - \text{cp}_{s}^{B} \right) \right\rbrack q_{s}c_{s},s = 1,..,S_{r} \\
+\&\left( 2 - \frac{1}{1 - F_{s}} \right)a_{s + 1} = \left( 1 + r_{s} \right)a_{s} + \Lambda_{s} - c_{s} + \frac{1}{1 + p_{s}}\left\lbrack p_{s} + \left( 1 - \text{cp}_{s}^{B} \right) \right\rbrack q_{s}c_{s},s = S_{r} + 1,\ldots,S \\
+\end{matrix} \right.\ \]
+
+\textbf{Because we distinguish individual medical accounts, the boundary
+conditions no longer work on personal asset but agents' wealth}:
+
+\[\left\{ \begin{matrix}
+\& a_{s = 1} = \Phi_{s = 1} = 0 \\
+\& a_{\text{dead}} + \Phi_{\text{dead}} = 0 \\
+\end{matrix} \right.\ \]
+
+where \(a_{\text{dead}},\ \Phi_{\text{dead}}\) are the account balances
+at the end of age year \(S\). If \(\Phi_{S} \neq 0\), we assume there is
+a transfer in the last year to meet the assumption of no last bequest.
+
+\hypertarget{government}{%
+\subsubsection{Government}\label{government}}
+
+The government keeps the following budget constraint:
+
+\[\text{TR}_{t} + D_{t + 1} = G_{t} + \text{LI}_{t} + r_{t}D_{t}\]
+
+where
+\(TR_{t} = \sigma\sum_{s = 1}^{S_{r}}{N_{s,t}w_{s,t}\left( 1 - l_{s,t} \right)} + \mu\sum_{s = 1}^{S}{N_{s,t}c_{s,t}}\)
+is the total tax revenues, \(\sigma\) is wage tax rate, \(\mu\) is
+consumption tax rate, \(D_{t}\) is government outstanding debt. Further,
+we have a soft constraint \(\frac{G_{t}}{Y_{t}} < \mathbb{k}_{t}\),
+where \(\mathbb{k}_{t}\) is the cap of debt ratio, a given constant.
+
+\hypertarget{equilibrium}{%
+\subsubsection{Equilibrium}\label{equilibrium}}
+
+For the good market, we have the following clearing condition:
+
+\[Y_{t} = C_{t} + I_{t} + G_{t}\]
+
+where \(C_{t} = \sum_{s = 1}^{S}{N_{s,t}c_{s,t}}\) is the total
+consumption, and \(I_{t} = K_{t + 1} - \left( 1 - \kappa \right)K_{t}\)
+is the investment.
+
+For the capital market, we have the clearing condition:
+
+\[K_{t} = \sum_{s = 1}^{S}{N_{s,t}\left( a_{s,t} + \Phi_{s,t} \right)} + D_{t}\]
+
+\hypertarget{notations}{%
+\subsection{Notations}\label{notations}}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\textbf{Marks} & \textbf{Names}\tabularnewline
+\midrule
+\endhead
+\(o_{t}\) & Scaling coefficient for wage profiling\tabularnewline
+\(\varepsilon\left( s \right)\) & Relative wage level\tabularnewline
+\(\text{LI}_{t}\) & Gap of pooling medical account\tabularnewline
+\(\mu,\sigma\) & Consumption, Wage tax rate\tabularnewline
+\(\kappa\) & Depreciation rate\tabularnewline
+\(\theta,\eta\) & Personal, Firm contribution to pension\tabularnewline
+\(\phi,\zeta\) & Personal, Firm contribution to medical\tabularnewline
+\(\Lambda\) & Pension benefit\tabularnewline
+\(\pi,\pi^{M}\) & Total contribution of pension, medical\tabularnewline
+\(F\) & Mortal probabilities\tabularnewline
+\(q\) & Ratio of medical fee to total consumption\tabularnewline
+\(p\) & Ratio of Outpatient fee to Inpatient fee\tabularnewline
+\(a,\Phi\) & Personal asset, Individual medical account\tabularnewline
+\(\text{cp}^{B}\) & Copayment rate of inpatient fee\tabularnewline
+\(\gamma\) & Inter-temporal substitution elasticity\tabularnewline
+\(\alpha\) & Preference of leisure than consumption\tabularnewline
+\(\varrho\) & Consumption substitution elasticity of
+labour\tabularnewline
+\(\mathbb{a}\) & Transfer rate from firm contribution to individual
+medical account (working phase)\tabularnewline
+\(\mathbb{b}\) & Transfer rate from firm contribution to the individual
+medical account of those retired\tabularnewline
+\(\mathbb{k}\) & Cap of debt to GDP ratio\tabularnewline
+\(\mathbb{P}\) & Transferred amount from firm contribution to the
+individual medical account of the retired\tabularnewline
+\bottomrule
+\end{longtable}
+
+Table Notations

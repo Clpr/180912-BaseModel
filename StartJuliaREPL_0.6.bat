@@ -1,0 +1,1 @@
+start C:\Users\admin\Desktop\JULIA_test.lnk
