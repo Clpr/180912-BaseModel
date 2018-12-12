@@ -138,23 +138,24 @@ println("="^60);println("Section: Transition Search");println("="^60)
     # 4. writes to csv files
         Output_Transition(RESULT_mat,RESULT_vec, path=".\\output\\", prefix="Trans")
     # 5. 读入profiling数据，绘制误差收敛图，第1列是loop，第
-        # mat_profile = readcsv("output/Log_Transition.txt")[2:end,:]
-        # figure(1)
-        #     plot(mat_profile[10:end,1],mat_profile[10:end,3]); grid(true);
-        #     plot(mat_profile[10:end,1],mat_profile[10:end,4]); title("Error by Loop"); xlabel("Loop"); ylabel("Rel Err");
-        #     legend(["K","L"])
+        mat_profile = readcsv("output/Log_Transition.txt")[2:end,:]
+        figure(1)
+            plot(mat_profile[10:end,1],mat_profile[10:end,3]); grid(true);
+            plot(mat_profile[10:end,1],mat_profile[10:end,4]); title("Error by Loop"); xlabel("Loop"); ylabel("Rel Err");
+            legend(["K","L"])
+            tight_layout()
     # 6. (optional) profiling 性能profiling
-        Profile.clear()  # 清除所有profiling数据
-        @profile TransitionSearch(MAX_YEAR, MAX_AGE, RETIRE_AGE, DATA_mat, DATA_vec, DATA_num ,
-            flag_diagnose = false, MagicNum = 2.0,
-            TOL_SS = 1E-02, MAX_ITER = 1000,
-            LogFilepath = ".\\output\\Log_Transition.txt", UPDATE_STEP = 0.5  )
-        # 打开一个文件流
-        fio = open("./ExtraScripts/性能Profile.txt","w")
-        # 写出数据
-        Profile.print(fio)
-        # 关闭文件流
-        close(fio)
+        # Profile.clear()  # 清除所有profiling数据
+        # @profile TransitionSearch(MAX_YEAR, MAX_AGE, RETIRE_AGE, DATA_mat, DATA_vec, DATA_num ,
+        #     flag_diagnose = false, MagicNum = 2.0,
+        #     TOL_SS = 1E-02, MAX_ITER = 1000,
+        #     LogFilepath = ".\\output\\Log_Transition.txt", UPDATE_STEP = 0.5  )
+        # # 打开一个文件流
+        # fio = open("./ExtraScripts/性能Profile.txt","w")
+        # # 写出数据
+        # Profile.print(fio)
+        # # 关闭文件流
+        # close(fio)
 
 
 # ==============================================================================
@@ -282,7 +283,7 @@ figure(6,figsize=[10,4.5])
     title("GDP Growth")
     plot(2010:2017,Cp_AcctGDPGrowth,"--b"); grid(true); xlim([2009,2018]); xlabel("Year"); ylabel("Growth")
     plot(2010:2017,Cp_SimuGDPGrowth ./ 100,"r"); legend(["AcctGDP","SimuGDP"])
-
+    tight_layout()
 
 
 
