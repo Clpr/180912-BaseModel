@@ -1,13 +1,19 @@
-基于180820性能提升版本，采用最新的解析解+Bisection来计算居民决策路径，允许负资产（能够刻画外债带来的过度消费）
+## LOG
 
-ExtraScripts提供测试脚本test_Analytical.jl，证明了采用解析解可以保证同一套数据下最优路径上不同起点决策结果完全一致
+This version is improved from 180820 version. It has a better performance now (a little readability sacrified);
+using analytical solutions of the household lifetime decision-making problems, allowing negative assets;
 
-另外：
-1. 更新了NumAlgo模块，新增Bisection()函数，高精度二分法求根
-2. 新增Policy_Analytical, Policy_Analytical_Retired模块，PolicyFunctions（DP，值函数求解）has been deprecated
-3. 新增New_DepartableUtilityFunction系列文档(PART 1,2)给出解析解的推导、算法和代码中的符号约定
+an extra testing script *test_Analytical.jl* is provided. It shows Euler equation always works on the same dataset and solutions starting from different ages are consistent.
 
+## DESCRIPTION
+1. updated *NumAlgo*, added *Bisection()* to do bisection searching (p.s.: in another developing version, it has been replaced by equivalent methods in *Roots* package, this package is so common that it does not bring extra dependencies)
+2. added *Policy_Analytical* & *Policy_Analytical_Retired* modules; the *PolicyFunctions* module (dynamic programming based) has been deprecated (but not deleted)
+3. added *New_DepartableUtilityFunction* and other attached documents which discussed mathematics, algorithms and notations in the household department.
 
+## IMPORTANT
+because Julia 1.0 has been published, I am refactoring & transferring this program to Julia 1.0 version. The new version has a better readability and is easy to generalize. New features, such as NamedTuple type and LaTex documentation, will be fully supported in the forthcoming version. And I will udpate the mark system (Greece characters now are widely used as variable names). Readers may find it easier to read, run and generalize the model. However, because the reform of data structure system & that Julia 1.0 is no more based on MKL, the performance of the new version may be affected a little.
 
 by Tianhao Zhao
 2018-9-10
+
+(wrote the README in so hurry, pls do not mind my grammar)
