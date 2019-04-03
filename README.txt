@@ -1,3 +1,7 @@
+# 180912-BaseModel
+
+<font color = red>(Archived, no more update)</font>
+
 ## LOG
 
 This version is improved from 180820 version. It has a better performance now (a little readability sacrified);
